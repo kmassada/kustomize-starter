@@ -1,8 +1,8 @@
-resources:
-- deployment.yaml
 commonLabels:
   run: repo
 namePrefix: repo-
+bases:
+- github.com/kmassada/kustomize-starter//base
 patchesJson6902:
 - target:
     group: extensions

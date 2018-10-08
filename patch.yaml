@@ -1,0 +1,17 @@
+- op: replace
+  path: /spec/template/spec/containers
+  value:
+  - image: app
+    name: nginx
+    ports:
+    - containerPort: 80
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+- op: replace
+  path: /spec/replicas
+  value: 4

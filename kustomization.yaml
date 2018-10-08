@@ -1,0 +1,20 @@
+resources:
+- deployment.yaml
+commonLabels:
+  run: repo
+namePrefix: repo-
+patchesJson6902:
+- target:
+    group: extensions
+    version: v1beta1
+    kind: Deployment
+    name: app
+  path: patch.yaml
+vars:
+  - name: MY_APP_NAME
+    objref:
+      kind: Deployment
+      name: app
+      apiVersion: extensions/v1beta1
+    fieldref:
+      fieldpath: metadata.name

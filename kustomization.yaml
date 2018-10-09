@@ -10,6 +10,11 @@ patchesJson6902:
     kind: Deployment
     name: app
   path: deployment.patch.yaml
+- target:
+    version: v1
+    kind: Service
+    name: app
+  path: service.patch.yaml
 vars:
   - name: MY_APP_NAME
     objref:
